@@ -32,11 +32,10 @@ public class CompanyService {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/search")
-    @Consumes("application/x-www-form-urlencoded")
     public String search(@RequestParam("q") String data ,@Context HttpServletRequest servletRequest) throws Exception {
 
-
-        List<Map<String, Object>> records = stockMetadataDAO.searchCompaniesByAny(data);
+        System.out.println("q = " + data+" , "+servletRequest.getParameter("q"));
+        List<Map<String, Object>> records = stockMetadataDAO.searchCompaniesByAny(servletRequest.getParameter("q"));
          Map<String,Object> dataObj = new HashMap<String, Object>();
         dataObj.put("data", records);
 

@@ -38,7 +38,7 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <welcome-file-list>
-        <welcome-file>LandingPage.jsp</welcome-file>
+        <welcome-file>start1.html</welcome-file>
 
     </welcome-file-list>
 

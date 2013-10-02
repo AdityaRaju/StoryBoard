@@ -99,20 +99,26 @@ public class StockMetadataDAO extends MongoDBBaseDAO {
     public List<Map<String,Object>> searchCompaniesByAny(String keyword){
         //BasicDBObject likeObj = new BasicDBObject();
         BasicDBObject dbObject1 = new BasicDBObject("ticker", Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
-        BasicDBObject dbObject2 = new BasicDBObject("LONG_COMP_NAME", Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
-        List<BasicDBObject> queries = new ArrayList<BasicDBObject>();
-        queries.add(dbObject1);
-        queries.add(dbObject2);
-        BasicDBObject dbObject = new BasicDBObject("$or",queries);
+
         //q.put("name",  java.util.regex.Pattern.compile(m));
-        System.out.println("query = " + dbObject);
-        DBCursor dbObjects = cinfoTable.find(dbObject);
+        System.out.println("query = " + dbObject1);
+        DBCursor dbObjects = cinfoTable.find(dbObject1);
         List<Map<String,Object>> results = new ArrayList<Map<String, Object>>();
         while(dbObjects.hasNext()) {
             BasicDBObject next = (BasicDBObject)dbObjects.next();
             Map<String,Object> map = next.toMap();
             results.add(map);
-            System.out.println("map = " + map);
+            //System.out.println("map = " + map);
+        }
+
+        BasicDBObject dbObject2 = new BasicDBObject("LONG_COMP_NAME", Pattern.compile(keyword, Pattern.CASE_INSENSITIVE));
+
+        dbObjects = cinfoTable.find(dbObject2);
+        while(dbObjects.hasNext()) {
+            BasicDBObject next = (BasicDBObject)dbObjects.next();
+            Map<String,Object> map = next.toMap();
+            results.add(map);
+            //System.out.println("map = " + map);
         }
         return results;
 
