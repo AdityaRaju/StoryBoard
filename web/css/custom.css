@@ -1,0 +1,57 @@
+
+
+.bs-news {
+    background-color: #FAFAFA;
+    border-color: #E5E5E5 #EEEEEE #EEEEEE;
+    border-style: solid;
+    border-width: 1px 0;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.05) inset;
+    margin: 0 -15px 15px;
+    padding: 45px 15px 15px;
+    position: relative;
+}
+
+.bs-news {
+    background-color: #FFFFFF;
+    border-color: #DDDDDD;
+    border-radius: 4px 4px 0 0;
+    border-width: 1px;
+    box-shadow: none;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.bs-news:after {
+    color: #BBBBBB;
+    content: "News";
+    font-size: 12px;
+    font-weight: bold;
+    left: 15px;
+    letter-spacing: 1px;
+    position: absolute;
+    text-transform: uppercase;
+    top: 15px;
+}
+
+.container .jumbotron {
+    padding:10px;
+}
+
+.fnt-size-18{
+    font-size: 18px;
+
+}
+.fnt-size-14{
+    font-size: 14px;
+}
+.fnt-size-16{
+    font-size: 16px;
+}
+
+.fnt-bold{
+    font-weight: bold;
+}
+
+.mar-top10{
+    margin-top: 10px;
+}

@@ -46,7 +46,7 @@ public class TestMail {
         message.setFrom(new InternetAddress("admin@presentation.com"));
         message.setSubject("This is the subject");
         message.addRecipient(Message.RecipientType.TO,
-                new InternetAddress("dosapati@yahoo.com"));
+                new InternetAddress("dosapati@gmail.com"));
 
         transport.connect();
         transport.sendMessage(message,
