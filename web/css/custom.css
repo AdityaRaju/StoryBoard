@@ -41,6 +41,19 @@
     font-size: 18px;
 
 }
+.fnt-size-24{
+    font-size: 24px;
+
+}
+.fnt-size-36{
+    font-size: 36px;
+
+}
+
+.fnt-size-46{
+    font-size: 46px;
+
+}
 .fnt-size-14{
     font-size: 14px;
 }
@@ -54,4 +67,16 @@
 
 .mar-top10{
     margin-top: 10px;
+}
+.padd-20px{
+    padding-bottom: 20px;
+}
+
+.navbar{
+    margin-bottom: 5px;
+}
+
+.padd-top-10px{
+     padding-top: 10px;
+     padding-left: 10px;
 }
