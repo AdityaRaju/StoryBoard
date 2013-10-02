@@ -34,6 +34,28 @@ public class StoryboardService {
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("/addSlide")
+    @Consumes("application/x-www-form-urlencoded")
+    public String addSlide(@FormParam("data")String data){
+        Gson gson = new Gson();
+        Type type =new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> dataObj = (Map<String, String>)gson.fromJson(data,type);
+
+        HashMap<String,Object> outObj = new HashMap<String, Object>();
+        /* List<Map<String,Object>> dataObj1 = new ArrayList<Map<String, Object>>();
+        for(int i=0;i<10;i++){
+            HashMap<String,Object> dataObj2 = new HashMap<String, Object>();
+            dataObj2.put("ticker",UUID.randomUUID().toString());
+            dataObj2.put("sector","Technology");
+            dataObj1.add(dataObj2);
+        }*/
+
+
+        return gson.toJson(outObj);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
     @Path("/search")
     @Consumes("application/x-www-form-urlencoded")
     public String pload(@FormParam("data") String data ,@Context HttpServletRequest servletRequest) throws Exception {

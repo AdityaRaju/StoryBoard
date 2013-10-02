@@ -91,7 +91,7 @@
                 <div class="bs-example">
                     <div class="btn-toolbar">
                         <div class="btn-group">
-                            <button  type="button" class="btn btn-default">
+                            <button  type="button" class="btn btn-default add-update-slide" >
                                 <span class="glyphicon glyphicon-check"></span> Add/Update Slide
                             </button>
 
@@ -116,9 +116,9 @@
                         <button class="btn btn-primary" type="button">Save</button>
                         <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle" type="button"><span class="caret"></span></button>
                         <ul role="menu" class="dropdown-menu">
-                            <li>Enter Name: <input type="text" placeholder="Presentation Name"> <button  type="button" class="btn btn-default">
+                            <li><a href="#">
                                 <span class="glyphicon glyphicon-save"></span> Save
-                            </button></li>
+                            </a></li>
                             <li><a href="#">
                                 <span class="glyphicon glyphicon-send"></span> Email</a></li>
                             <li><a href="#">Something else here</a></li>
@@ -133,11 +133,11 @@
 
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="col-xs-12 col-sm-5">
-                <p class="pull-right">
+                <!--<p class="pull-right">
                     <span class="input-group-addon">
         <input type="checkbox">
       </span>
-                </p>
+                </p>-->
                 <div class="jumbotron" id="cInfoDivId">
 
                 </div>
@@ -382,6 +382,10 @@
         <li><h3 class="cres-title"><a href="#" cid="BBG002">IBM</a></h3></li>
     </script>
   <script type="text/javascript">
+      var dataMap={};
+      dataMap['cid']="BBG001";
+      dataMap['comment']="BBG001";
+
       $(document).ready(function () {
 
 
@@ -414,6 +418,13 @@
           return '<ul>' + '<li><h3 class="cres-title"><a href="#" cid="BBG001">Apple Inc.</a></h3></li>'+
                   '</ul>';
       }});
+
+      $('.add-update-slide').click(function (e) {
+          e.preventDefault();
+          $.post('/1/sb/addSlide', { data:JSON.stringify(dataMap),slideId:-1}, function (data) {
+             console.log(data);
+          });
+      });
 
   </script>
   </body>
