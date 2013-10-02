@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af85979-d1bd-4ded-b03f-6ce4df31a66f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/dao/SlideDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/test1/SlideDAOTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" afterPath="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/service/CompanyService.java" afterPath="$PROJECT_DIR$/src/com/om/service/CompanyService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/start1.html" afterPath="$PROJECT_DIR$/web/start1.html" />
     </list>
     <list id="1442aaf5-e92b-4417-a0d9-f098add508de" name="ignore" comment="">
@@ -82,19 +80,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="start1.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="start1.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/start1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="418" column="17" selection-start="22443" selection-end="22443" vertical-scroll-proportion="38.541668">
+            <state line="43" column="84" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.38922155">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StoryboardService.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="CompanyService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/service/CompanyService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="70" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#1455#1471#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="StoryboardService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/om/service/StoryboardService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.5652174">
+            <state line="37" column="50" selection-start="875" selection-end="921" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1219#1235#0" expanded="true" />
                 <element signature="e#1935#1951#0" expanded="true" />
@@ -106,19 +115,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OpenMarketService.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/om/service/OpenMarketService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="87" column="17" selection-start="2865" selection-end="2870" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="StockMetadataDAO.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="96" column="7" selection-start="2263" selection-end="2979" vertical-scroll-proportion="0.0">
+            <state line="81" column="36" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1960#1981#0" expanded="true" />
                 <element signature="e#2682#2703#0" expanded="true" />
@@ -186,13 +186,13 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/com/om/dao/MongoDBConnectionManager.java" />
         <option value="$PROJECT_DIR$/src/com/bloomberglp/blpapi/examples/RefDataExample.java" />
-        <option value="$PROJECT_DIR$/src/com/om/service/CompanyService.java" />
         <option value="$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java" />
         <option value="$PROJECT_DIR$/web/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/src/com/test1/SlideDAOTest.java" />
         <option value="$PROJECT_DIR$/src/com/om/dao/SlideDAO.java" />
         <option value="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" />
+        <option value="$PROJECT_DIR$/src/com/om/service/CompanyService.java" />
         <option value="$PROJECT_DIR$/web/start1.html" />
       </list>
     </option>
@@ -889,7 +889,11 @@
       <created>1380723648570</created>
       <updated>1380723648570</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Initial Version">
+      <created>1380726264876</created>
+      <updated>1380726264876</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1106,18 +1110,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/service/CompanyService.java">
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/OpenMarketService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="23" selection-start="821" selection-end="821" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#1167#1183#0" expanded="true" />
-          </folding>
+        <state line="87" column="17" selection-start="2865" selection-end="2870" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="7" selection-start="2263" selection-end="2979" vertical-scroll-proportion="0.0">
+        <state line="81" column="36" selection-start="2295" selection-end="2295" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1960#1981#0" expanded="true" />
             <element signature="e#2682#2703#0" expanded="true" />
@@ -1126,23 +1128,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/service/OpenMarketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="87" column="17" selection-start="2865" selection-end="2870" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/start1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="418" column="17" selection-start="22443" selection-end="22443" vertical-scroll-proportion="38.541668">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/om/service/StoryboardService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1168" selection-end="1168" vertical-scroll-proportion="0.5652174">
+        <state line="37" column="50" selection-start="875" selection-end="921" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1219#1235#0" expanded="true" />
             <element signature="e#1935#1951#0" expanded="true" />
@@ -1150,6 +1138,22 @@
             <element signature="e#3842#3858#0" expanded="true" />
             <element signature="e#5304#5320#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/CompanyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="70" selection-start="1165" selection-end="1165" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1455#1471#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/start1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="43" column="84" selection-start="1527" selection-end="1527" vertical-scroll-proportion="0.38922155">
+          <folding />
         </state>
       </provider>
     </entry>

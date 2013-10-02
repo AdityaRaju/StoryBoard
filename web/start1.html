@@ -45,7 +45,7 @@
           </ul>
             <form role="search" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" placeholder="Search" class="form-control search-c" id="searchDivId">
+                    <input type="text" placeholder="Search" class="form-control search-c popover-link" id="searchDivId">
                 </div>
                 <button type="submit" class="btn btn-success">Search</button>
             </form>
@@ -241,6 +241,10 @@
         <p>&copy; Company 2013</p>
       </footer>
 
+    <div id="popover-content-cinfo" class="hide-me">
+        <ul><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000BLNNH6">International Business Machines Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000B9XRY4">Apple Inc</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000C0G1D1">Intel Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000NDYB67">General Motors Co</a></h3></li></ul>
+    </div>
+
     </div><!--/.container-->
 
 
@@ -351,12 +355,51 @@
           });
       });
 
-
+      /**
+       * "_id" : ObjectId("524c2199f3b28b1529953e51"),
+       "PX_LAST" : "35.91",
+       "CUR_MKT_CAP" : "4.9704390625E10",
+       "LONG_COMP_NAME" : "General Motors Co",
+       "PARSEKYABLE_DES_SOURCE" : "GM US Equity",
+       "RUSSELL_SECTOR_NAME" : "Consumer Discretionary",
+       "ID_BB_GLOBAL" : "BBG000NDYB67",
+       "ID_BB_UNIQUE" : "EQ0000000008690631",
+       "ID_CUSIP 1" : "37045V100",
+       "ticker" : "GM",
+       "GICS_SECTOR_NAME" : "Consumer Discretionary",
+       "ID_BB_COMPANY" : "16632863",
+       "INDUSTRY_GROUP" : "Auto Manufacturers",
+       "GICS_INDUSTRY_NAME" : "Automobiles",
+       "GICS_SECTOR" : "25",
+       "ID_CUSIP" : "37045V100",
+       "ID_ISIN" : "US37045V1008"
+       */
 
   </script>
     <script src="js/highstock.js"></script>
     <script src="js/exporting.js"></script>
     <script src="js/jquery.tmpl.js"></script>
+    <script id="cInfoTemplate2" type="text/x-jquery-tmpl">
+        <h2>{{html LONG_COMP_NAME}}</h2>
+        <ul style="max-width: 320px;" class="nav nav-pills nav-stacked fnt-size-18 fnt-bold">
+            <li class="">
+                <a href="#">
+                    <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">{{html PX_LAST}}</span>
+                    Current Price:
+                </a>
+            </li>
+            <li><a href="#">
+                <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">{{html CUR_MKT_CAP}} Bil (USD)</span>
+                Market Cap:
+            </a></li>
+            <li>
+            <li>Ticker: {{html ticker}}</li>
+            <li>Industry: {{html INDUSTRY_GROUP}} / {{html GICS_INDUSTRY_NAME}}</li>
+            <li>Sector: {{html GICS_SECTOR_NAME}}</li>
+            </li>
+        </ul>
+    </script>
+
     <script id="cInfoTemplate1" type="text/x-jquery-tmpl">
         <h2>Gilead Sciences Inc.</h2>
         <ul style="max-width: 320px;" class="nav nav-pills nav-stacked fnt-size-18 fnt-bold">
@@ -397,11 +440,36 @@
                   //the 'is' for buttons that trigger popups
                   //the 'has' for icons within a button that triggers a popup
                   if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
-                     // $(this).popover('hide');
+                      $(this).popover('hide');
                   }
               });
+
+
           });
 
+          /**
+           * '$('.search-res').click(function(){
+
+           var cid = $(this).attr('cid');
+           console.log(cid);
+
+
+           });
+           */
+          $(document).on( 'click', '.search-res', function(){
+              var cid = $(this).attr('cid');
+              console.log(cid);
+              $.get('/1/company/search?q='+cid+"&m=true", function (response) {
+
+                  //$('.popover-content').empty();
+                  console.log(response.data);
+                  $('#cInfoDivId').empty();
+                  $("#cInfoTemplate2").tmpl(response.data).appendTo("div#cInfoDivId");
+
+                  //return response;
+
+              });
+          } );
 
       });
 
@@ -411,13 +479,98 @@
 
       });
 
+      $('#searchDivId').on('show.bs.popover', function () {
+          // do something…
+          console.log('before event is called');
+          console.log(this);
+      })
 
-      $('.search-c').popover({trigger:'keypress',placement:'bottom',html:true,content:function(){
-         // console.log($("#cResTemplate1").tmpl());
+
+      $('#searchDivId').popover({
+          html : true,
+          placement:'bottom',
+          content: function(obj) {
+              /*console.log('pop-over object 11..!');
+              console.log(callSearch());
+              var dataObj = callSearch().responseJSON.data;
+              //console.log(callSearch().reseponse);
+              var resultHTML = '<ul>';
+              $.each( dataObj, function( ) {
+                  //console.log( this.ticker );
+                  resultHTML+='<li><h3 class="cres-title"><a href="#" class="search-res" cid="' +this.ID_BB_GLOBAL+
+                          '">' + this.LONG_COMP_NAME +
+                          '</a></h3></li>';
+              });
+
+              resultHTML+=
+                      '</ul>';
+              console.log(resultHTML);*/
+              return $('#popover-content-cinfo').html();
+          }
+
+      });
+
+      function callSearch(){
+          return $.get('/1/company/search', { q:$('#searchDivId').val()}, function (response) {
+
+              //$('.popover-content').empty();
+              console.log(resultHTML);
+              return response;
+
+          });
+      }
+
+
+      /*$('#searchDivId').on('keyup',function(){
           console.log('searchTerm ->'+$('#searchDivId').val());
-          return '<ul>' + '<li><h3 class="cres-title"><a href="#" cid="BBG001">Apple Inc.</a></h3></li>'+
-                  '</ul>';
+          //$('.search-c').popover('hide');
+          var e=$(this);
+          //e.popover({content: '',placement:'bottom',html:true}).popover('hide');
+          //e.unbind('click');
+          $.get('/1/company/search', { q:$('#searchDivId').val()}, function (response) {
+              var resultHTML = '<ul>';
+              $.each( response.data, function( ) {
+                  //console.log( this.ticker );
+                  resultHTML+='<li><h3 class="cres-title"><a href="#" class="search-res" cid="' +this.ID_BB_GLOBAL+
+                          '">' + this.LONG_COMP_NAME +
+                          '</a></h3></li>';
+              });
+
+               resultHTML+=
+                      '</ul>';
+              //$('.popover-content').empty();
+              console.log(resultHTML);
+              e.popover({content: resultHTML,placement:'bottom',html:true}).popover('show');
+              console.log('abc ->');
+          });
+      });*/
+
+
+      /*$('.search-c').popover({trigger:'keypress',placement:'bottom',html:true,content:function(){
+         // console.log($("#cResTemplate1").tmpl());
+          //console.log('searchTerm ->'+$('#searchDivId').val());
+          var searchResult = getSearchResult();
+          console.log(searchResult);
+
+          return  searchResult;
+
       }});
+
+      function getSearchResult(){
+          return $.get('/1/company/search', { q:$('#searchDivId').val()}, function (response) {
+              //console.log(response.data) ;
+              var resultHTML = '<ul>';
+              $.each( response.data, function( ) {
+                  //console.log( this.ticker );
+                  resultHTML+='<li><h3 class="cres-title"><a href="#" class="search-res" cid="' +this.ID_BB_GLOBAL+
+                          '">' + this.LONG_COMP_NAME +
+                          '</a></h3></li>';
+              });
+              //console.log(resultHTML);
+              return resultHTML +
+                      '</ul>';
+          });
+      }*/
 
       $('.add-update-slide').click(function (e) {
           e.preventDefault();
