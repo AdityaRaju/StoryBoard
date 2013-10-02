@@ -79,25 +79,8 @@
                 <p class="pull-right visible-xs">
                     <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
                 </p>
-                <div class="jumbotron">
-                    <h2>Gilead Sciences Inc.</h2>
-                    <ul style="max-width: 320px;" class="nav nav-pills nav-stacked fnt-size-18 fnt-bold">
-                        <li class="">
-                            <a href="#">
-                                <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">62.8</span>
-                                Current Price:
-                            </a>
-                        </li>
-                        <li><a href="#">
-                            <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">220 Bil (USD)</span>
-                            Market Cap:
-                        </a></li>
-                        <li>
-                        <li>Ticker: GILD</li>
-                        <li>Industry: Biotechnology</li>
-                        <li>Sector: Health Care</li>
-                        </li>
-                    </ul>
+                <div class="jumbotron" id="cInfoDivId">
+
                 </div>
              </div>
             <div class="col-xs-12 col-sm-7">
@@ -236,9 +219,43 @@
 
       });
 
+
+
   </script>
     <script src="js/highstock.js"></script>
     <script src="js/exporting.js"></script>
     <script src="js/jquery.tmpl.js"></script>
+    <script id="cInfoTemplate1" type="text/x-jquery-tmpl">
+        <h2>Gilead Sciences Inc.</h2>
+        <ul style="max-width: 320px;" class="nav nav-pills nav-stacked fnt-size-18 fnt-bold">
+            <li class="">
+                <a href="#">
+                    <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">62.8</span>
+                    Current Price:
+                </a>
+            </li>
+            <li><a href="#">
+                <span class="badge pull-right fnt-size-18 fnt-bold mar-top10">220 Bil (USD)</span>
+                Market Cap:
+            </a></li>
+            <li>
+            <li>Ticker: GILD</li>
+            <li>Industry: Biotechnology</li>
+            <li>Sector: Health Care</li>
+            </li>
+        </ul>
+    </script>
+  <script type="text/javascript">
+      $(document).ready(function () {
+
+
+
+          $("#cInfoTemplate1").tmpl().appendTo("div#cInfoDivId");
+
+
+
+
+      });
+  </script>
   </body>
 </html>

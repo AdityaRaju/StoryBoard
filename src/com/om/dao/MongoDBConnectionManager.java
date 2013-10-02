@@ -27,13 +27,15 @@ public class MongoDBConnectionManager {
 
             String hostName = InetAddress.getLocalHost().getHostName();
             System.out.println("hostName = " + hostName);
-           if (StringUtils.containsIgnoreCase(hostName, "local")) {
+            mongoDBConnection = new Mongo(new ServerAddress("54.225.82.210", 27017));
+
+            /*if (StringUtils.containsIgnoreCase(hostName, "local")) {
                 System.out.println("Trying to connect to mongodb using local ---------------- %%%%%%%%%%%%%% ");
                 mongoDBConnection = new Mongo();
             } else {
                 System.out.println("Trying to Remote connect using snews port 27017 ---------------- %%%%%%%%%%%%%% ");
                 mongoDBConnection = new Mongo(new ServerAddress("snews.servehttp.com", 27017));
-            }
+            }*/
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Exception -->"+e.getMessage()+" , Trying to connect to MongoDB using locally as last resort ---------------- %%%%%%%%%%%%%% ");
