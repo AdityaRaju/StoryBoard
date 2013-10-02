@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af85979-d1bd-4ded-b03f-6ce4df31a66f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ico/apple-touch-icon-114-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ico/apple-touch-icon-144-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ico/apple-touch-icon-57-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ico/apple-touch-icon-72-precomposed.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/ico/favicon.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/custom.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/offcanvas.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/application.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/customizer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/exporting.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/filesaver.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/highstock.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/holder.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/html5shiv.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jszip.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/less.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/offcanvas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/raw-files.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/respond.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/uglify.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/start1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/jquery.tmpl.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mail/TestMail.java" afterPath="$PROJECT_DIR$/src/com/mail/TestMail.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/start1.html" afterPath="$PROJECT_DIR$/web/start1.html" />
     </list>
     <ignored path="StoryBoard.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -104,7 +83,7 @@
       <file leaf-file-name="start1.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/start1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="21" selection-start="1853" selection-end="1853" vertical-scroll-proportion="-7.9166665">
+            <state line="241" column="36" selection-start="15801" selection-end="15801" vertical-scroll-proportion="-3.2916667">
               <folding>
                 <element signature="tag#div#2;tag#div#0;tag#div#0;tag#div#1;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
               </folding>
@@ -115,7 +94,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="17" selection-start="33" selection-end="33" vertical-scroll-proportion="0.12569833">
+            <state line="3" column="21" selection-start="33" selection-end="33" vertical-scroll-proportion="0.12569833">
               <folding />
             </state>
           </provider>
@@ -187,8 +166,8 @@
         <option value="$PROJECT_DIR$/web/start.html" />
         <option value="$PROJECT_DIR$/src/com/mail/TestMail.java" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
-        <option value="$PROJECT_DIR$/web/start1.html" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/web/start1.html" />
       </list>
     </option>
   </component>
@@ -255,6 +234,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -595,7 +592,11 @@
       <created>1380677164202</created>
       <updated>1380677164202</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Initial Version">
+      <created>1380677218366</created>
+      <updated>1380677218366</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -817,7 +818,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/start1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="21" selection-start="1853" selection-end="1853" vertical-scroll-proportion="-7.9166665">
+        <state line="241" column="36" selection-start="15801" selection-end="15801" vertical-scroll-proportion="-3.2916667">
           <folding>
             <element signature="tag#div#2;tag#div#0;tag#div#0;tag#div#1;tag#div#1;tag#body#0;tag#html#0" expanded="false" />
           </folding>
@@ -826,7 +827,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="33" selection-end="33" vertical-scroll-proportion="0.12569833">
+        <state line="3" column="21" selection-start="33" selection-end="33" vertical-scroll-proportion="0.12569833">
           <folding />
         </state>
       </provider>
