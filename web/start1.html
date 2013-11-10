@@ -375,7 +375,7 @@
         <ul style="max-width: 320px;" class="nav nav-pills nav-stacked fnt-size-18 fnt-bold">
             <li>Current Price: <span style="color:green">{{html PX_LAST}}</span></li>
             <li>Market Cap: {{html mkt_cap1}} (Mil)</li>
-            <li>Ticker: {{html ticker}}<span id="myCid" class="hide-me" cid="{{html ID_BB_GLOBAL}}"></span></li>
+            <li>Ticker: {{html ticker}}<span id="myCid" class="hide-me" cid="{{html ID_BB_GLOBAL}}" symbol="{{html ticker}}"></span></li>
             <li>Industry: {{html INDUSTRY_GROUP}} / {{html GICS_INDUSTRY_NAME}}</li>
             <li>Sector: {{html GICS_SECTOR_NAME}}</li>
             </li>
@@ -516,6 +516,7 @@
               console.log(response.data);
               $('#cInfoDivId').empty();
               $("#cInfoTemplate2").tmpl(response.data).appendTo("div#cInfoDivId");
+              console.log('dataObj.symbol ->'+dataObj.symbol);
               loadNewsFor(dataObj.symbol);
               //return response;
 
@@ -525,7 +526,7 @@
       function refreshResults(currSlide){
           var dataObj={};
           dataObj['q']=currSlide.cid;
-          //dataObj['symbol']=currSlide.symbol;
+          dataObj['symbol']=currSlide.symbol;
           dataObj['m']='true';
           callSearchUsing(dataObj);
           $('#commDivId').empty();
@@ -536,21 +537,22 @@
       function loadNewsFor(symbol){
           //http://betawebapi.dowjones.com/fintech/articles/api/v1/source/424/?count=20
           var newsURLToCall = '/1/company/news/'+(symbol?symbol:'all');
-          //console.log('newsURL ->'+newsURLToCall);
+          console.log('newsURL ->'+newsURLToCall);
           $.get(newsURLToCall,function (response) {
               //
               $('#news-ft-div').empty();
               $("#cnewsTemplate1").tmpl(response.Headlines).appendTo("div#news-ft-div");
-              $('a.news-item').hover(function(e) {
+              $('span.news-ticker').hover(function(e) {
                   //hideAllPopovers();
                   e.preventDefault();
-                  //console.log(' hover -->');
+                  var tickerSymbol = $(this).attr('n-ticker');
+                  console.log(' hover -->'+tickerSymbol);
                   var e1=$(this);
-                  var newsURLToCall1 = '/1/company/news/all';
+                  var newsURLToCall1 = '/1/estimates/for/'+tickerSymbol;
                   $.get(newsURLToCall1,function(d) {
                       e1.popover({html : true,
                           live: true,
-                          placement:'bottom',title:'Apple Inc.',content: '<h1>Title H1</h1>'}).popover('show');
+                          placement:'bottom',title:tickerSymbol,content: '<h1>Title ' +tickerSymbol+'</h1>'}).popover('show');
                   });
               },function(e) {
                   var e1=$(this);
@@ -648,7 +650,7 @@
               var dataObj={};
               dataObj['slideId']=slideId;
               dataObj['type']=type;
-              //dataObj['m']='true';
+              dataObj['m']='true';
               $.post('/1/sb/prevNext', { data:JSON.stringify(dataObj),slideId:-1}, function (response) {
                   refreshResults(response.data.currSlide);
               });
@@ -664,6 +666,7 @@
               //e.preventDefault();
               var dataObj = {};
               dataObj['cid']=$('#myCid').attr('cid');
+              dataObj['symbol']=$('#myCid').attr('symbol');
               dataObj['cmt']=$('#myCmt').val();
               $.post('/1/sb/addSlide', { data:JSON.stringify(dataObj),slideId:-1}, function (data) {
                   alert('Slide has been saved Successfully..!');
@@ -791,6 +794,7 @@
           e.preventDefault();
           var dataObj = {};
           dataObj['cid']=$('#myCid').attr('cid');
+          dataObj['symbol']=$('#myCid').attr('symbol');
           dataObj['cmt']=$('#myCmt').val();
           $.post('/1/sb/addSlide', { data:JSON.stringify(dataObj),slideId:-1}, function (data) {
              console.log(data);

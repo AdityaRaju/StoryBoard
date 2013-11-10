@@ -113,7 +113,7 @@ public class CompanyService {
         List<Map<String,Object>> headlines = (List<Map<String,Object>>)newsMap.get("Headlines");
         for (Map<String, Object> headline : headlines) {
             Map<String,String> keywordTickerMatch = new HashMap<String, String>();
-            System.out.println("headline = " + headline.get("Headline"));
+            //System.out.println("headline = " + headline.get("Headline"));
             String headLine = (String)headline.get("Headline");
             String headLineStr = headLine;
             //headline.put("HeadlineStr",headLine);
@@ -134,7 +134,7 @@ public class CompanyService {
             }
             headline.put("tickerMatchMap",keywordTickerMatch);
             headline.put("HeadlineStr",replaceStockInfo(keywordTickerMatch,headLine));
-            System.out.println("StringUtils.toStringArray(keywords) = " + sb.toString()); //StringUtils.toStringArray(keywords));
+            //System.out.println("StringUtils.toStringArray(keywords) = " + sb.toString()); //StringUtils.toStringArray(keywords));
             //newsWorker.getKeywords((String)headline.get("Headline"),"",false);
         }
         String output = gson.toJson(newsMap);

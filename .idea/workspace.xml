@@ -2,24 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2af85979-d1bd-4ded-b03f-6ce4df31a66f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/solr-solrj-4.3.1.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/export.pdf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/test/Test1.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/custom.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/InteractiveChart.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/start_markit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/twilio-java-sdk-3.4.1-jar-with-dependencies.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/WEB-INF/lib/twilio-java-sdk-3.4.1.jar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/Example.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/service/EstimizeService.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/om/service/TwilloService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/mail/TestMail.java" afterPath="$PROJECT_DIR$/src/com/mail/TestMail.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/dao/MongoDBConnectionManager.java" afterPath="$PROJECT_DIR$/src/com/om/dao/MongoDBConnectionManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/dao/SlideDAO.java" afterPath="$PROJECT_DIR$/src/com/om/dao/SlideDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java" afterPath="$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/dao/StockPriceDAO.java" afterPath="$PROJECT_DIR$/src/com/om/dao/StockPriceDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" afterPath="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/service/CompanyService.java" afterPath="$PROJECT_DIR$/src/com/om/service/CompanyService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" afterPath="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/test1/StockFindTest.java" afterPath="$PROJECT_DIR$/src/com/test1/StockFindTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java" afterPath="$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java" afterPath="$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/custom.css" afterPath="$PROJECT_DIR$/web/css/custom.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/start1.html" afterPath="$PROJECT_DIR$/web/start1.html" />
     </list>
@@ -82,32 +74,6 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java" line="41" class="com.om.ai.AIWorker" package="com.om.ai">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java" line="43" class="com.om.ai.AIWorker" package="com.om.ai">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
     </line_breakpoints>
     <breakpoint_any>
       <breakpoint>
@@ -152,7 +118,7 @@
       <file leaf-file-name="CompanyService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/om/service/CompanyService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="163" column="29" selection-start="6260" selection-end="6260" vertical-scroll-proportion="0.0">
+            <state line="115" column="34" selection-start="4023" selection-end="4023" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#1950#1966#0" expanded="true" />
                 <element signature="e#3969#3985#0" expanded="true" />
@@ -161,34 +127,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AIWorker.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
+      <file leaf-file-name="StoryboardService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/service/StoryboardService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="22" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.0">
+            <state line="47" column="20" selection-start="1084" selection-end="1092" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#3027#3035#0" expanded="true" />
-                <element signature="e#4282#4290#0" expanded="true" />
+                <element signature="e#1970#1986#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="start1.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/web/start1.html">
+      <file leaf-file-name="SlideDAO.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/dao/SlideDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="389" column="57" selection-start="18429" selection-end="18429" vertical-scroll-proportion="0.5168539">
+            <state line="141" column="12" selection-start="4636" selection-end="4636" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JerseyClientGet.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java">
+      <file leaf-file-name="AIWorker.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="227" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
+            <state line="24" column="42" selection-start="3252" selection-end="3252" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#3172#3180#0" expanded="true" />
+                <element signature="e#4441#4449#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -197,7 +163,7 @@
       <file leaf-file-name="GetNewsInfoTest.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="10" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0">
+            <state line="35" column="41" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -205,23 +171,58 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Test1.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/om/test/Test1.java">
+      <file leaf-file-name="JerseyClientGet.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="22" selection-start="529" selection-end="1102" vertical-scroll-proportion="0.0">
+            <state line="24" column="89" selection-start="648" selection-end="648" vertical-scroll-proportion="0.32569975">
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#418#433#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StockMetadataDAO.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java">
+      <file leaf-file-name="start1.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/start1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="117" column="132" selection-start="3977" selection-end="4039" vertical-scroll-proportion="0.0">
+            <state line="525" column="49" selection-start="24220" selection-end="24220" vertical-scroll-proportion="10.625">
+              <folding>
+                <element signature="e#11842#12568#0" expanded="false" />
+                <element signature="e#12687#15112#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Example.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/Example.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="29" column="40" selection-start="484" selection-end="1264" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TwilloService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/service/TwilloService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="35" column="112" selection-start="924" selection-end="1122" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EstimizeService.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/om/service/EstimizeService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="40" column="82" selection-start="1147" selection-end="1183" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#840#856#0" expanded="true" />
+                <element signature="e#1555#1571#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -239,22 +240,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/com/mail/TestMail.java" />
-        <option value="$PROJECT_DIR$/src/com/om/service/StoryboardService.java" />
-        <option value="$USER_HOME$/Downloads/Desktop-1/custom.html" />
         <option value="$PROJECT_DIR$/web/custom.html" />
-        <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/src/com/om/dao/StockPriceDAO.java" />
         <option value="$PROJECT_DIR$/web/js/InteractiveChart.js" />
         <option value="$PROJECT_DIR$/src/com/om/dao/MongoDBConnectionManager.java" />
-        <option value="$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java" />
         <option value="$PROJECT_DIR$/src/com/test1/StockFindTest.java" />
         <option value="$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java" />
-        <option value="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
-        <option value="$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java" />
         <option value="$PROJECT_DIR$/src/com/om/test/Test1.java" />
+        <option value="$PROJECT_DIR$/web/css/custom.css" />
+        <option value="$PROJECT_DIR$/src/com/Example.java" />
+        <option value="$PROJECT_DIR$/src/com/om/service/TwilloService.java" />
         <option value="$PROJECT_DIR$/src/com/om/service/CompanyService.java" />
         <option value="$PROJECT_DIR$/web/start1.html" />
+        <option value="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
+        <option value="$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java" />
+        <option value="$PROJECT_DIR$/src/com/om/service/EstimizeService.java" />
+        <option value="$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java" />
       </list>
     </option>
   </component>
@@ -393,6 +394,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="twilio-java-sdk-3.4.1-jar-with-dependencies.jar" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="WEB-INF" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="solr-solrj-4.3.1.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
             </PATH_ELEMENT>
@@ -426,6 +453,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -496,6 +545,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StoryBoard" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="com" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="om" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -594,18 +669,18 @@
       <recent name="com.om.service" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/com" />
       <recent name="$PROJECT_DIR$/web/WEB-INF/lib" />
       <recent name="$PROJECT_DIR$/web" />
       <recent name="$PROJECT_DIR$/web/js" />
       <recent name="$PROJECT_DIR$/web/bootstrap/js" />
-      <recent name="$PROJECT_DIR$/web/css" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/web/js" />
       <recent name="$PROJECT_DIR$/web" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Test1">
+  <component name="RunManager" selected="Application.JerseyClientGet">
     <configuration default="false" name="TestMail" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1054,7 +1129,11 @@
       <created>1380731660950</created>
       <updated>1380731660950</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Initial Version">
+      <created>1384043290921</created>
+      <updated>1384043290921</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1079,8 +1158,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2487395" sideWeight="0.67275494" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2526636" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2487395" sideWeight="0.6012176" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39269406" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1181,48 +1260,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/web/start_markit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/js/InteractiveChart.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="26" selection-start="273" selection-end="273" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/test1/SlideDAOTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="296" selection-end="296" vertical-scroll-proportion="0.36105034">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/test1/SeleniumTest1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="13" selection-start="465" selection-end="465" vertical-scroll-proportion="0.31914893">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/bootstrap/javascript.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1010" column="62" selection-start="51280" selection-end="51280" vertical-scroll-proportion="-6.4166665">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/test1/StockFindTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="24" column="5" selection-start="885" selection-end="885" vertical-scroll-proportion="0.0">
@@ -1237,39 +1274,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="227" selection-start="786" selection-end="786" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/om/dao/StockMetadataDAO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="117" column="132" selection-start="3977" selection-end="4039" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="10" selection-start="1444" selection-end="1444" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="22" selection-start="3665" selection-end="3665" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3027#3035#0" expanded="true" />
-            <element signature="e#4282#4290#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1285,16 +1293,76 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/bloomberglp/blpapi/examples/RefDataExample.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-1.6184211">
+        <state line="15" column="35" selection-start="904" selection-end="904" vertical-scroll-proportion="0.59210527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/custom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="126" column="40" selection-start="1881" selection-end="1881" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/TwilloService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="112" selection-start="924" selection-end="1122" vertical-scroll-proportion="0.0">
           <folding>
-            <element signature="e#0#130650#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/dao/SlideDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="12" selection-start="4636" selection-end="4636" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/StoryboardService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="47" column="20" selection-start="1084" selection-end="1092" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#1970#1986#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/start1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="525" column="49" selection-start="24220" selection-end="24220" vertical-scroll-proportion="10.625">
+          <folding>
+            <element signature="e#11842#12568#0" expanded="false" />
+            <element signature="e#12687#15112#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="42" selection-start="3252" selection-end="3252" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3172#3180#0" expanded="true" />
+            <element signature="e#4441#4449#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/test1/GetNewsInfoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="41" selection-start="1242" selection-end="1242" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/om/service/CompanyService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="163" column="29" selection-start="6260" selection-end="6260" vertical-scroll-proportion="0.0">
+        <state line="115" column="34" selection-start="4023" selection-end="4023" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="e#1950#1966#0" expanded="true" />
             <element signature="e#3969#3985#0" expanded="true" />
@@ -1302,10 +1370,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/start1.html">
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/EstimizeService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="389" column="57" selection-start="18429" selection-end="18429" vertical-scroll-proportion="0.5168539">
+        <state line="40" column="82" selection-start="1147" selection-end="1183" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#840#856#0" expanded="true" />
+            <element signature="e#1555#1571#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/Example.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="40" selection-start="484" selection-end="1264" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/JerseyClientGet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="89" selection-start="648" selection-end="648" vertical-scroll-proportion="0.32569975">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

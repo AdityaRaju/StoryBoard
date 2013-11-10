@@ -33,7 +33,8 @@ public class GetNewsInfoTest {
 
         String pattern = "twitter(?i)";
         Pattern pattern1 = Pattern.compile("\\b" + "twitter" + "\\b", Pattern.CASE_INSENSITIVE);
-        String sentence = "twitter The sly brown Fox jumped over the lazy foX.";
+        //TODO: why gap is not working...
+        String sentence = "U.S. Hot Stocks: Santarus, AVG Tech, Gap, Lennar, Groupon";
         //String result1 = sentence.replaceAll("(?i)fox", "twitter <span class='abc'>$1$3</span>");
         //System.out.println("Input: " + sentence);
         //System.out.println("Output: " + result1);
