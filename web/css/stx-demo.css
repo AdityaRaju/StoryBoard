@@ -121,7 +121,7 @@ select:focus {
 	line-height:27px; 
 	height:27px;
 	width:16px;
-	background-image: url(stx-ui-icons.png);
+	background-image: url(img/stx-ui-icons.png);
 	background-position:3px 0px;
 	border-left:1px dotted #999;
 	opacity:.4;
