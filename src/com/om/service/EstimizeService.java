@@ -29,7 +29,7 @@ public class EstimizeService {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/for/{symbol}")
     public String estimates(@PathParam("symbol")String symbol){
-        Map<String,String> result = new HashMap<String, String>();
+        Map<String,Object> result = new HashMap<String, Object>();
         result.put("success","true");
 
         Client client = Client.create();
@@ -54,12 +54,15 @@ Accept: application/json
 
         }
 
-        //Gson gson = new Gson();
+       // Gson gson = new Gson();
 
         String news = response.getEntity(String.class);
+        /*Map[] myTypes = gson.fromJson(news, Map[].class);
+        System.out.println(myTypes.length);*/
+        //Map<String,Object> retObj = gson.fromJson(news,HashMap.class);
+        //result.put("estimates", (HashMap)gson.fromJson(news,HashMap.class));
 
-
-        return news;//gson.toJson(result);
+        return news;//"{estimates:"+news+"}";//gson.toJson(result);
 
     }
 }
