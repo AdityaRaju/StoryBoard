@@ -27,6 +27,9 @@
             padding-top: 50px;
             padding-bottom: 20px;
         }
+        .nrml{
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -339,15 +342,44 @@
 
             </div>
             </div>
-            <div id="profile" class="tab-pane fade">
-                <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+            <div id="profile" class="tab-pane fade nrml">
+                <div class="page-number"><button type="button" class="btn btn-info" id="profileBtn" mainDiv="profile">Get Estimates</button></div>
+                <h3>Stocks near highs face Apple , Google , Cisco, shaky sentiment</h3>
+                <div>
+
+                   Nov. 10, 2013, 8:00 a.m. EST
+
+                    A string of economic data releases may be clouded by shutdown
+
+                    By Wallace Witkowski, MarketWatch
+
+                    <p>SAN FRANCISCO (MarketWatch) — As concerns over an overheated stock market run high, investor attention this week will shift to the economy, the next Fed chief, and the outlook from tech bellwether Cisco Systems Inc. </p>
+
+                    <p>The week’s data releases are likely to be muddied by the government’s October shutdown, making it even harder to figure out whether the economic recovery is solid enough for the Federal Reserve to back off its stimulus. Some earnings reports—notably Cisco CSCO +1.73% , Wal-Mart Stores Inc. WMT +0.58% , and a few other retailers—may help fill in the blanks.
+
+                    Last week, the Dow Jones Industrial Average DJIA +1.08%  finished up 0.9%, the S&P 500 Index SPX +1.34%  gained 0.5%, while the Nasdaq Composite Index COMP +1.60%  shed less than 0.1%.
+
+                    Stocks finished higher on the day Friday , including a record close for the Dow, after a report that the U.S. economy added more jobs than expected. Economic forecasters, however, are torn about the reliability of the October jobs report. Atlanta Fed President Lockhart said on Friday that some data will be less reliable through the end of the year.
+
+                    Even so, earlier in the week, San Francisco Fed President John Williams told reporters that consumer confidence data will be a big factor going forward in the decision on when to start tapering some $85 billion a month in asset purchases. On Friday, consumer sentiment data hit its lowest level since 2011.
+
+                    In the meantime, some investors are reacting to perceived signs of a frothy market. Outflows hit U.S. equity funds as stocks traded near record highs.
+
+                    “The market’s due for a rest and that’s what we’re seeing,” said Paul Nolte, managing director at Dearborn Partners. Nolte said he still expects a 3% to 5% pullback from recent highs.
+
+                    Societe Generale is taking an even gloomier view. It’s predicted a 15% correction for U.S. stocks, citing rising bond yields.
+
+                    Currently, the Dow industrials and S&P 500 are 0.3% off their all-time highs, and the Nasdaq is off 1.2% from its latest 13-year high.
+
+                    Third-quarter productivity and October capacity utilization data will be of particular interest to Robert Pavlik, chief market strategist at Banyan Partners.
+
+                    “Hopefully those numbers show a little growth, if manufacturing is keeping pace,” Pavlik said.
+
+                    Thursday also brings the Senate confirmation hearing of Janet Yellen to head the Federal Reserve. Yellen is expected to continue the dovish Fed policies of current chairman Ben Bernanke. Treasury yields, which spiked at the end of the week, are particularly vulnerable to any signs she’ll want to curtail the Fed’s bond purchase program as soon as this year.
+
+                    Most financial markets are open Monday, Veterans Day, though there are no government data releases.<p></div>
             </div>
-            <div id="dropdown1" class="tab-pane fade">
-                <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-            </div>
-            <div id="dropdown2" class="tab-pane fade">
-                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-            </div>
+
         </div>
     </div>
 </div>
@@ -442,8 +474,66 @@
                 //find each element and add custom span tag...
             });
         });
+        $('#profileBtn').click(function (e) {
+            e.preventDefault();
+            var dataObj = {};
+            var mainDivId = '#'+$(this).attr('mainDiv')+'';
+            dataObj['q']=$(mainDivId).html();
+            dataObj['clean']='false';
 
-        $(document).on( 'hover', 'span.es-ticker', function(){
+            $.post('/1/eswidget/find', { data:JSON.stringify(dataObj)}, function (data) {
+                console.log(data);
+                //iterate data...
+                var newHTML = $(mainDivId).html();
+                $.each( data.data, function( key, value ) {
+                    console.log( key + ": " + value );
+                    var regExp = new RegExp(key,"i");
+                    newHTML=newHTML.replace(regExp,'<span class="es-ticker" n-symbol="' + (value ? value:'')+
+                            '">' + key.toUpperCase() +
+                            '</span>')
+                });
+                $(mainDivId).html(newHTML);
+                $('span.es-ticker').hover(function(e) {
+                    //hideAllPopovers();
+                    e.preventDefault();
+                    var tickerSymbol = $(this).attr('n-symbol');
+                    console.log(' hover -->'+tickerSymbol);
+                    var e1=$(this);
+                    var newsURLToCall1 = '/1/estimates/for/'+tickerSymbol;
+
+                    $.get(newsURLToCall1,function(d) {
+                        //console.log('output ->'+ d);
+                        var output = $( "#cInfoTemplate2" ).tmpl( d ).html();
+                        //console.log('output ->'+output);
+                        var htmlStr = '<table class="table table-striped"><thead><tr><th>#</th><th>EPS</th><th>Revenue</th></tr></thead><tbody>' ;
+                        $.each(d,function(index,obj){
+                            htmlStr+='<tr><td>' + obj.fiscal_year+"Q"+obj.fiscal_quarter+
+                                    '</td><td>' +  obj.eps+
+                                    '</td><td>' + obj.revenue+
+                                    '</td></tr>';
+                        })
+                        //output+
+                        htmlStr+='</tbody></table>';//
+                        e1.popover({html : true,
+                            live: true,
+                            placement:'bottom',title:tickerSymbol,content: htmlStr}).popover('show');
+                    });
+                },function(e) {
+                    var e1=$(this);
+                    e1.popover('hide');
+                });
+                /*for (var m in data.data){
+                 for (var i=0;i<data.data[m].length;i++){
+                 var regExp = new RegExp('Twitter',"i");
+                 $('body').html( $('body').html().replace(regExp,'<span class="es-ticker">Twitter 1</span>') )
+                 }
+                 }*/
+
+                //find each element and add custom span tag...
+            });
+        });
+
+        /*$(document).on( 'hover', 'span.es-ticker', function(){
             //$('span.news-ticker').hover(function(e) {
                 //hideAllPopovers();
                 e.preventDefault();
@@ -460,7 +550,7 @@
                 var e1=$(this);
                 e1.popover('hide');
            // });
-        } );
+        } );*/
     });
 
 

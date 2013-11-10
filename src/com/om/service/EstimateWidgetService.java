@@ -51,14 +51,20 @@ public class EstimateWidgetService {
         Gson gson = new Gson();
         Type type =new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> dataObj = (Map<String, String>)gson.fromJson(data,type);
+        String clean = dataObj.get("clean") ;
         String q = dataObj.get("q");
         //System.out.println("q = " + data+" , "+ q);
+        String formattedText = "";
+        if(StringUtils.isNotBlank(clean)){
+            formattedText = q;
+        }else{
+            Document doc = Jsoup.parse(q);
+            DefaultDocumentCleaner documentCleaner = new DefaultDocumentCleaner();
+            Document cleandDoc = documentCleaner.clean(doc);
+            DefaultOutputFormatter defaultOutputFormatter = new DefaultOutputFormatter();
+            formattedText = defaultOutputFormatter.getFormattedText(doc.body());
+        }
 
-        Document doc = Jsoup.parse(q);
-        DefaultDocumentCleaner documentCleaner = new DefaultDocumentCleaner();
-        Document cleandDoc = documentCleaner.clean(doc);
-        DefaultOutputFormatter defaultOutputFormatter = new DefaultOutputFormatter();
-        String formattedText = defaultOutputFormatter.getFormattedText(doc.body());
         Map<String,String> keywordTickerMatch = new HashMap<String, String>();
 
         List<String> keywords = aiWorker.getKeywords(formattedText, null, false);

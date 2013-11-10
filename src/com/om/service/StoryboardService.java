@@ -39,6 +39,9 @@ public class StoryboardService {
     @Autowired
     SlideDAO slideDAO;
 
+    @Autowired
+    TwilloService twilloService;
+
 
 
     static String SL_LIST= "SLIDE_LIST_OBJ";
@@ -97,6 +100,16 @@ public class StoryboardService {
         slideDAO.insertPPT(insertObj);
 
         new TestMail().test(nextPPTId);
+
+        String url = "http://localhost:9991/start1.html?q=" + nextPPTId;
+
+
+        String body = "Jim Walsh has created a Analyst research presentation. Take a look @ "+url;
+        try{
+        twilloService.sendSMS(null,"8605144014",body);
+            twilloService.sendSMS(null,"3475156410",body);
+            //3475156410
+        }catch(Exception e){}
 
         //slideList.add(dataObj);
         HashMap<String,Object> outObj = new HashMap<String, Object>();

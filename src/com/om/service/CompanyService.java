@@ -124,7 +124,7 @@ public class CompanyService {
                 List<Map<String, Object>> results = stockMetadataDAO.searchCompaniesByRegEx(keyword);
                 if(results != null && results.size()>0){
                     Map<String, Object> result = results.get(0);
-                    System.out.println("result = " + result.get("ticker"));
+                    //System.out.println("result = " + result.get("ticker"));
                     keywordTickerMatch.put(keyword,(String)result.get("ticker"));
                 }
                 //headLineStr.replaceAll()
