@@ -248,10 +248,12 @@
     <script src="js/offcanvas.js"></script>
   <script type="text/javascript">
       $(function() {
+          //$.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=?',
 
+          //$.get('/1/chart/for/aapl', function(data) {
           $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=?', function(data) {
               // Create the chart
-              //console.log(data) ;
+              console.log(data) ;
               $('#chart1').highcharts('StockChart', {
 
                   height:400,
