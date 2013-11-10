@@ -1,22 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2af85979-d1bd-4ded-b03f-6ce4df31a66f" name="Default" comment="ev01">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/es-widget.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/wsj.html" />
+    <list default="true" id="2af85979-d1bd-4ded-b03f-6ce4df31a66f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ppt/Iresearch.pptx" afterPath="$PROJECT_DIR$/web/ppt/Iresearch.pptx" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/ppt/PeekEstimate.pptx" afterPath="$PROJECT_DIR$/web/ppt/PeekEstimate.pptx" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" afterPath="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/custom.css" afterPath="$PROJECT_DIR$/web/css/custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/start1.html" afterPath="$PROJECT_DIR$/web/start1.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/wsj.html" afterPath="$PROJECT_DIR$/web/wsj.html" />
     </list>
     <list id="1442aaf5-e92b-4417-a0d9-f098add508de" name="ignore" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/bloomberglp/blpapi/examples/RefDataExample.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/bloomberglp/blpapi/examples/RefDataExample.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/mail/TestMail$SMTPAuthenticator.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/mail/TestMail$SMTPAuthenticator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/mail/TestMail.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/mail/TestMail.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/MongoDBConnectionManager.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/MongoDBConnectionManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/StockMetadataDAO.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/StockMetadataDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/StockPriceDAO.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/om/dao/StockPriceDAO.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/StoryBoard/com/test1/StockFindTest.class" afterPath="$PROJECT_DIR$/out/production/StoryBoard/com/test1/StockFindTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/bloomberglp/blpapi/examples/RefDataExample.java" afterPath="$PROJECT_DIR$/src/com/bloomberglp/blpapi/examples/RefDataExample.java" />
     </list>
     <ignored path="StoryBoard.iws" />
@@ -50,32 +42,6 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
       <breakpoint url="file://$PROJECT_DIR$/src/com/om/service/StoryboardService.java" line="176" class="com.om.service.StoryboardService" package="com.om.service">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/test1/TickersTest.java" line="48" class="com.test1.TickersTest" package="com.test1">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="false" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/src/com/om/service/EstimateWidgetService.java" line="74" class="com.om.service.EstimateWidgetService" package="com.om.service">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -147,10 +113,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="wsj.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="wsj.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/wsj.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="391" column="28" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.04901961">
+            <state line="391" column="40" selection-start="7761" selection-end="7761" vertical-scroll-proportion="-7.7083335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TickersTest.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/test1/TickersTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="48" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -159,7 +134,7 @@
       <file leaf-file-name="EstimateWidgetService.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/om/service/EstimateWidgetService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="0" selection-start="2676" selection-end="2676" vertical-scroll-proportion="0.0">
+            <state line="76" column="40" selection-start="2830" selection-end="2830" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -174,10 +149,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AIWorker.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AIWorker.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="36" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
+            <state line="19" column="219" selection-start="618" selection-end="618" vertical-scroll-proportion="0.09090909">
               <folding />
             </state>
           </provider>
@@ -219,9 +194,9 @@
         <option value="$PROJECT_DIR$/web/ev01.html" />
         <option value="$PROJECT_DIR$/web/css/custom.css" />
         <option value="$PROJECT_DIR$/web/start1.html" />
-        <option value="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
         <option value="$PROJECT_DIR$/web/js/es-widget.js" />
         <option value="$PROJECT_DIR$/web/wsj.html" />
+        <option value="$PROJECT_DIR$/src/com/om/ai/AIWorker.java" />
       </list>
     </option>
   </component>
@@ -295,24 +270,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StoryBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StoryBoard" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -469,7 +426,114 @@
       <recent name="$PROJECT_DIR$/web" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TickersTest">
+  <component name="RestoreUpdateTree">
+    <UpdateInfo date="Moments ago" ActionInfo="_Update">
+      <UpdatedFiles>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated from server" />
+          <option name="myStatusName" value="Changed on server" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CHANGED_ON_SERVER" />
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Updated" />
+            <option name="myStatusName" value="Changed" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="UPDATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/web/wsj.html</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Created" />
+            <option name="myStatusName" value="Created" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="CREATED" />
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/web/ppt/Iresearch.pptx</PATH>
+            <PATH vcs="Git" revision="">$PROJECT_DIR$/web/ppt/PeekEstimate.pptx</PATH>
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Deleted" />
+            <option name="myStatusName" value="Deleted" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="true" />
+            <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          </FILE-GROUP>
+          <FILE-GROUP>
+            <option name="myUpdateName" value="Restored" />
+            <option name="myStatusName" value="Will be restored" />
+            <option name="mySupportsDeletion" value="false" />
+            <option name="myCanBeAbsent" value="false" />
+            <option name="myId" value="RESTORED" />
+          </FILE-GROUP>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Modified" />
+          <option name="myStatusName" value="Modified" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MODIFIED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Skipped" />
+          <option name="myStatusName" value="Skipped" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SKIPPED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with conflicts" />
+          <option name="myStatusName" value="Will be merged with conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_CONFLICTS" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged with tree conflicts" />
+          <option name="myStatusName" value="Merged with tree conflicts" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Merged" />
+          <option name="myStatusName" value="Will be merged" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="MERGED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Not in repository" />
+          <option name="myStatusName" value="Not in repository" />
+          <option name="mySupportsDeletion" value="true" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UNKNOWN" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally added" />
+          <option name="myStatusName" value="Locally added" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_ADDED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Locally removed" />
+          <option name="myStatusName" value="Locally removed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="LOCALLY_REMOVED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Switched" />
+          <option name="myStatusName" value="Switched" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="SWITCHED" />
+        </FILE-GROUP>
+      </UpdatedFiles>
+    </UpdateInfo>
+  </component>
+  <component name="RunManager" selected="Tomcat Server.Tomcat 7">
     <configuration default="false" name="JerseyClientGet" type="Application" factoryName="Application" temporary="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -826,11 +890,11 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Application.JerseyClientGet" />
-      <item index="1" class="java.lang.String" itemvalue="Application.GetNewsInfoTest" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Test1" />
-      <item index="3" class="java.lang.String" itemvalue="Application.WebCrawlerTest" />
-      <item index="4" class="java.lang.String" itemvalue="Application.TickersTest" />
-      <item index="5" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat 7" />
+      <item index="2" class="java.lang.String" itemvalue="Application.GetNewsInfoTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Test1" />
+      <item index="4" class="java.lang.String" itemvalue="Application.WebCrawlerTest" />
+      <item index="5" class="java.lang.String" itemvalue="Application.TickersTest" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -956,7 +1020,15 @@
       <created>1384103393017</created>
       <updated>1384103393017</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="ev01">
+      <created>1384105852950</created>
+      <updated>1384105852950</updated>
+    </task>
+    <task id="LOCAL-00025" summary="ev01">
+      <created>1384106009766</created>
+      <updated>1384106009766</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -968,12 +1040,13 @@
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40557274" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.40487063" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32838285" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32724506" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24957699" sideWeight="0.2359736" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -984,7 +1057,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32662538" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1144,13 +1216,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/test1/TickersTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/SAMPLEDATA.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-8.149254">
@@ -1179,23 +1244,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/service/EstimateWidgetService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="0" selection-start="2676" selection-end="2676" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/js/es-widget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="61" column="3" selection-start="2324" selection-end="2324" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="36" selection-start="435" selection-end="435" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -1207,9 +1258,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/test1/TickersTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="5027" selection-end="5027" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/wsj.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="391" column="28" selection-start="7750" selection-end="7750" vertical-scroll-proportion="0.04901961">
+        <state line="391" column="40" selection-start="7761" selection-end="7761" vertical-scroll-proportion="-7.7083335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/service/EstimateWidgetService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="40" selection-start="2830" selection-end="2830" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/om/ai/AIWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="219" selection-start="618" selection-end="618" vertical-scroll-proportion="0.09090909">
           <folding />
         </state>
       </provider>
