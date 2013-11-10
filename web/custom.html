@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Image selection</title>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <style type="text/css"></style>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="css/result-light.css">
+
+
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
+
+
+
+    <style type="text/css">
+            /* make modal larger */
+        .modal {
+            width:700px
+        }
+
+            /* put the categories in two columns */
+        #categories ul {
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+            column-count: 2;
+        }
+
+            /* make the thumbnail grid pretty */
+        .thumbnails {
+            text-align: justify;
+        }
+
+        .thumbnails li{
+            height:180px;
+            display: inline-block;
+            float:none;
+        }
+    </style>
+
+</head>
+<body class="modal-open">
+<div id="search-form" class="modal hide fade in" style="display: block;">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3>Find Image to Include in Slide</h3>
+    </div>
+    <div class="modal-body">
+        <form class="well form-search">
+            <input type="text" class="search-query span4" placeholder="Find the perfect image...">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <!-- this div will be populated with categories -->
+        <div id="categories">
+            <h3>or Browse by Category</h3>
+            <div class="well">
+                <ul><li><a href="#">Abstract</a></li><li><a href="#">Animals</a></li><li><a href="#">Architecture</a></li><li><a href="#">Art-Illustration</a></li><li><a href="#">Backgrounds</a></li><li><a href="#">Business</a></li><li><a href="#">Communication</a></li><li><a href="#">Computers</a></li><li><a href="#">Conceptual</a></li><li><a href="#">Editorial</a></li><li><a href="#">Education</a></li><li><a href="#">Food</a></li><li><a href="#">Health</a></li><li><a href="#">Holidays</a></li><li><a href="#">Industry</a></li><li><a href="#">Internet</a></li><li><a href="#">Landscapes</a></li><li><a href="#">Maps</a></li><li><a href="#">Miscellaneous</a></li><li><a href="#">Musical</a></li><li><a href="#">Nature</a></li><li><a href="#">Objects</a></li><li><a href="#">People</a></li><li><a href="#">Places</a></li><li><a href="#">Sexual</a></li><li><a href="#">Sports</a></li><li><a href="#">Transportation</a></li></ul>
+            </div>
+        </div>
+
+        <!-- this div will be populated with search results -->
+        <div class="well hide" id="results-holder">
+            <ul class="thumbnails" id="results">
+            </ul>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="" id="category-link" class="pull-left hide">← browse by category</a>
+        <a href="http://www.bigstockphoto.com"><img src="http://help.bigstockphoto.com/attachments/token/c703i5m6arysrey/?name=bigstock-black-medium.png" alt="Bigstock"></a>
+    </div>
+</div>
+
+<!-- search results item template -->
+<ul class="item-template hide">
+    <li>
+        <a href="#" class="thumbnail"><img></a>
+    </li>
+</ul>
+
+<!-- image detail template -->
+<div class="detail-template modal fade hide">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">×</button>
+        <h3></h3>
+    </div>
+    <div class="modal-body">
+        <img>
+    </div>
+    <div class="modal-footer">
+        <a href="#" class="btn" data-dismiss="modal">Close</a>
+        <a href="#" class="btn btn-primary">Select this image</a>
+    </div>
+</div>
+
+
+
+<script type="text/javascript">
+    var account_id = '524986';
+    var selected_category, search_term, infinite_scroll, page, jsonp_happening;
+
+    $(function() {
+
+        //open search modal on page load
+        $("#search-form").modal({backdrop: 'static'});
+
+        //populage the categories
+        $.getJSON("http://api.bigstockphoto.com/2/"+account_id+"/categories/?callback=?", function(data){
+            if(data && data.data) {
+                $.each(data.data, function(i, v){
+                    $("#categories ul").append("<li><a href='#'>"+v.name+"</a></li>");
+                });
+            }
+        });
+
+        //when the user clicks on a category
+        $("#categories").on("click", "a", function(e){
+            selected_category = $(this).text();
+            $(".form-search").trigger("submit", { category:true });
+        });
+
+        //show a loading message when the search button is clicked
+        $("html").on("submit", ".form-search", function(e, val){
+            page = 1;
+            var results = $("#results");
+            results.html("")
+            results.append("<li id=\"loading\"><span class=\"label\">Loading...</span></li>");
+            var val = val || {};
+
+            //check if the user selected a category or did a keyword search
+            if (val.category) {
+                search_term = "";
+            } else {
+                selected_category = "";
+                search_term = $(".search-query").val();
+            }
+
+            //start the search
+            $("html").trigger("bigstock_search", { q: search_term, category:selected_category });
+            $("#categories").hide();
+            $("#results-holder").show('medium');
+            $("#category-link").show();
+            e.preventDefault();
+        })
+
+        //infinite scroll
+        infinite_scroll = setInterval(function(){
+            var offset = $("#results li:last").offset();
+
+            if(offset && offset.top < 1000 && !jsonp_happening && $("#results-holder").is(":visible")) {
+                page++;
+                $("html").trigger("bigstock_search", { q: search_term, category:selected_category, page:page })
+            }
+
+        },100);
+
+    });
+
+    //populate the search results
+    $("html").on("bigstock_search", function(e, val){
+        if(!jsonp_happening) {
+            jsonp_happening = true;
+            var val = val || {};
+            val.page = val.page || 1;
+            var results = $("#results");
+
+            //setup the paramaters for the JSONP request
+            var params = {};
+            if(val.category != "") params.category = val.category;
+            params.q = val.q;
+            params.page = val.page;
+
+            $.getJSON("http://api.bigstockphoto.com/2/"+account_id+"/search/?callback=?", params, function(data){
+                results.find("#loading").remove();
+                results.find("#oops").remove();
+
+                if(data && data.data && data.data.images) {
+                    var template = $(".item-template");
+                    $.each(data.data.images, function(i, v){
+                        template.find("img").attr("src",v.small_thumb.url);
+                        template.find("a").attr("href","#"+v.id);
+                        results.append(template.html())
+                    });
+                } else {
+                    results.append("<li id=\"oops\"><div class=\"alert alert-error\">OOOPS! We found no results. Please try another search.</div></li>");
+                }
+                jsonp_happening = false;
+            });
+        }
+    })
+
+    //when a user clicks on a thumbnail
+    $("#results").on("click", "a", function(e){
+        $.getJSON("http://api.bigstockphoto.com/2/"+account_id+"/image/"+$(this).attr("href").substring(1)+"/?callback=?", function(data){
+            if(data && data.data && data.data.image) {
+                var detail_template = $(".detail-template");
+                detail_template.find("img").attr("src",data.data.image.preview.url);
+                detail_template.find("h3").html(data.data.image.title);
+                $(".detail-template").modal({backdrop:false});
+                e.preventDefault();
+            }
+        });
+    });
+
+    //when a user clicks on the "select this image" button
+    $(".detail-template").on("click", ".btn-primary", function(e){
+        alert('Here you will need server-side code to purchase and download the un-watermared image. See the documentation at http://bigstock.com/partners/')
+    });
+
+    //when a user clicks "browse by category"
+    $("#category-link").click(function(e){
+        $("#results-holder, #category-link").hide();
+        $("#categories").show('medium');
+        e.preventDefault();
+    });
+</script>
+
+<div class="modal-backdrop fade in"></div></body>
+</html>

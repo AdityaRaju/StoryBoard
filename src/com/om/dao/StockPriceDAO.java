@@ -3,12 +3,11 @@ package com.om.dao;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.om.util.DateTimeUtil;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Pattern;
 
 /**
@@ -49,6 +48,53 @@ public class StockPriceDAO extends MongoDBBaseDAO {
         //System.out.println("result.getField(\"_id\") = " + result.getField("_id"));
 
         //return (String)result.getField("_id");
+
+    }
+
+    public List<Map<String,Object>> getCompanyHistoricalData(String bbgid){
+        Map<String, Date> dtMap = new HashMap<String, Date>();
+        dtMap.put("$gte", DateTimeUtil.getDateSince(-100));
+        dtMap.put("$lt",DateTimeUtil.getHoursSince(1));
+
+        //BasicDBObject query = new BasicDBObject("dt",dtMap);
+        BasicDBObject q1 = new BasicDBObject("ID_BB_GLOBAL",bbgid);
+        q1.put("date",dtMap);
+        //q.put("name",  java.util.regex.Pattern.compile(m));
+       // DBCursor dbObjects = cinfoTable.find("");
+        DBCursor dbObjects = cinfoTable.find(q1);
+
+        List<Map<String,Object>> results = new ArrayList<Map<String, Object>>();
+        while(dbObjects.hasNext()) {
+            BasicDBObject next = (BasicDBObject)dbObjects.next();
+            Map<String,Object> map = next.toMap();
+            results.add(map);
+            System.out.println("map = " + map);
+        }
+        return results;
+
+    }
+
+    public String getCompanyMarketCap(String bbgid){
+        Map<String, Date> dtMap = new HashMap<String, Date>();
+        dtMap.put("$gte", DateTimeUtil.getDateSince(-2));
+        dtMap.put("$lt",DateTimeUtil.getHoursSince(1));
+
+        //BasicDBObject query = new BasicDBObject("dt",dtMap);
+        BasicDBObject q1 = new BasicDBObject("ID_BB_GLOBAL",bbgid);
+        q1.put("date",dtMap);
+        //q.put("name",  java.util.regex.Pattern.compile(m));
+        // DBCursor dbObjects = cinfoTable.find("");
+        DBCursor dbObjects = cinfoTable.find(q1);
+
+        List<Map<String,Object>> results = new ArrayList<Map<String, Object>>();
+        while(dbObjects.hasNext()) {
+            BasicDBObject next = (BasicDBObject)dbObjects.next();
+            Map<String,Object> map = next.toMap();
+            results.add(map);
+            System.out.println("map = " + map);
+            return map.get("market_cap").toString();
+        }
+        return "240.18";
 
     }
 

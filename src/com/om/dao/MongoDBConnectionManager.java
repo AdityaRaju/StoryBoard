@@ -27,7 +27,7 @@ public class MongoDBConnectionManager {
 
             String hostName = InetAddress.getLocalHost().getHostName();
             System.out.println("hostName = " + hostName);
-            mongoDBConnection = new Mongo(new ServerAddress("54.225.82.210", 27017));
+            mongoDBConnection = new Mongo(new ServerAddress("localhost", 27017));
 
             /*if (StringUtils.containsIgnoreCase(hostName, "local")) {
                 System.out.println("Trying to connect to mongodb using local ---------------- %%%%%%%%%%%%%% ");

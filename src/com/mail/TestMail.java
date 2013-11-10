@@ -13,10 +13,10 @@ public class TestMail {
     private static final String SMTP_AUTH_PWD  = "abcd$1234";
 
     public static void main(String[] args) throws Exception{
-        new TestMail().test();
+        new TestMail().test("iSB001");
     }
 
-    public void test() throws Exception{
+    public void test(String id) throws Exception{
         Properties props = new Properties();
         props.put("mail.transport.protocol", "smtp");
         props.put("mail.smtp.host", SMTP_HOST_NAME);
@@ -37,14 +37,18 @@ public class TestMail {
         part1.setText("This is multipart mail and u read part1......");
 
         BodyPart part2 = new MimeBodyPart();
-        part2.setContent("<b>This is multipart mail and u read part2......</b>", "text/html");
+        String url = "http://localhost:9991/start1.html?q=" + id;
+        String anchor = "<a href='" + url+
+                "'>Click Here</a>";
+        part2.setContent("<b>Jim Walsh has created a Analyst research presentation. <br/><br/> Please  " + anchor +
+                "</b>", "text/html");
 
         multipart.addBodyPart(part1);
         multipart.addBodyPart(part2);
 
         message.setContent(multipart);
         message.setFrom(new InternetAddress("admin@presentation.com"));
-        message.setSubject("This is the subject");
+        message.setSubject("Current Market Research Presentation");
         message.addRecipient(Message.RecipientType.TO,
                 new InternetAddress("dosapati@gmail.com"));
 

@@ -44,9 +44,13 @@
             <li><a href="#contact">Contact</a></li>
 
           </ul>
+
             <form role="search" class="navbar-form navbar-left">
                 <div class="form-group">
-                    <input type="text" placeholder="Search" class="form-control search-c popover-link" id="searchDivId">
+                    <input type="text" placeholder="Search" class="form-control search-c popover-link hidden" id="searchDivId">
+                    <input type="text" id="symbolsearch" class="form-control input-" placeholder="Enter company name or symbol">
+                    <!--<span class="help-inline hide"><img src="resources/spinner.gif" align="absmiddle" alt="loading ..."/> loading...</span>
+                    <span class="help-inline hide label label-info"></span>-->
                 </div>
                 <button type="submit" class="btn btn-success">Search</button>
             </form>
@@ -162,7 +166,7 @@
 
         <div class="row row-offcanvas row-offcanvas-right">
             <div class="col-xs-12 col-sm-6" style="overflow: scroll;height: 400px;">
-                <div class="bs-news" id="news-ft-div">
+                <div class="bs-news">
                     <div class="media">
                         <a href="#" class="pull-left">
                             <img src="http://ify.valuewalk.com/wp-content/uploads/2013/06/Market-News.jpg" style="width: 64px; height: 64px;">
@@ -233,7 +237,7 @@
         </div><!-- /.modal-dialog -->
     </div>
     <div id="popover-content-cinfo" class="hide-me">
-        <ul><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000BLNNH6" symbol="ibm">International Business Machines Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000B9XRY4" symbol="aapl">Apple Inc</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000C0G1D1" symbol="intc">Intel Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000NDYB67" symbol="gm">General Motors Co</a></h3></li></ul>
+        <ul><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000BLNNH6">International Business Machines Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000B9XRY4">Apple Inc</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000C0G1D1">Intel Corp</a></h3></li><li><h3 class="cres-title"><a href="#" class="search-res" cid="BBG000NDYB67">General Motors Co</a></h3></li></ul>
     </div>
 
     </div><!--/.container-->
@@ -244,12 +248,13 @@
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="js/jquery.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/offcanvas.js"></script>
   <script type="text/javascript">
       $(function() {
 
-          $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=goog-c.json&callback=?', function(data) {
+          $.getJSON('http://www.highcharts.com/samples/data/jsonp.php?filename=aapl-c.json&callback=?', function(data) {
               // Create the chart
               //console.log(data) ;
               $('#chart1').highcharts('StockChart', {
@@ -382,17 +387,17 @@
         </ul>
     </script>
     <script id="cnewsTemplate1" type="text/x-jquery-tmpl">
-
+        {{each(i,dataItem) book}}
         <div class="media">
             <a href="#" class="pull-left">
                 <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAYAAADDPmHLAAAEGElEQVR4nO2Z0aqrOhBAz/9/iiCFUCgilIKICFJKKUVEREREpPgLcx66260x7T4Pl7b7znpYL02Nw2Qlk5g/4zgK6OXPuwMABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABFAOAigHAZSDAMpBAOUggHIQQDkIoBwEUM7HCHDpKjmkkYRBIEEQSBBuJdmfpb382/N9ncvhcLhzPFdyURTfrxagOuzE87wHrCTJ2x/6qCW0n/Mj6ZTE96sF6PL4SXJv+HJoLg/7KJL18hkTS68gvt8twKWSwE7MeitpupOV9bu/Pbn7aI+L/3qeJ97qP0jwp8f32wXo8shKSiTtV9ul3v/DkjlItrGX1mWC+6aSoiilLK8UZTOrv0M7bS/u7a+KT60AeWRmycnq+TLatY3UdSVVVUnd9kuBzpPa7BsxvnuG5dFqMQPj4tZfI9sH9flV8SkVoJfYTJMeSt7UctqnEsexRFEs2TGX7tEu21qeo3M5n22zBDey9e1B3kk3jtLsgwf1/JXxKRUguSXYHhxrl506dtl5PJmdJpHLOHz350jwUGWLvoM4kY317k1aviU+fQIMpWye7qznpOXw/WxzEH+6NFeOGetI8GxQXJj4u46/IT5dAvS5GEci/XUo29B9bLoOTi/JevL/7fGrz34xw5abMkcpmMzkY/vu+JQLsEmLe3t7ts/fRs79KO1x+lFmI8W9Bi+X2MHx3qHKZrPzRrivPiI+PQKMnUSraQJDqWbtw2wmeZ4vWTUsduZmvRZjjBiz3OmvzEpMuLcSXTmX9rQaPiQ+NQJYNdEki5p42s2TFhe9FLFj+X2GtdSedw/2Af5Omg+IT5EAoxy30wQaOXXT9lZ2s3ptJO/dZ/qnTD7QDEXy9L8mzt8anzoBurP1pW0dSz1c24rMPp9vpLyMMrS1FEVhUUpZniScDogfyKkspay76/su1fJCxkE2KQUvjU+jAM5bMs+X1Wo5MOuk/KEva5NlkllttZdrz9tIObRWnbdLweviUyrAKP0Py/K1Ttr12cXynH1bWl03ekF23fX3jrZpKXhFfKoFGMdR2jx1nrk9zxMTZvcLmJ8SPNuV3zdt1vn7a8C++xwkC3zrvWvJh1fFhwD3gWiqQk6nkxyPBzkcT1I5LliI738rACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAgACAAIAAggHoQQDkIoBwEUA4CKAcBlIMAykEA5SCAchBAOQigHARQDgIoBwGUgwDKQQDlIIBy/gLoHj+sVcRb9QAAAABJRU5ErkJggg==" alt="64x64" data-src="holder.js/64x64" class="media-object" style="width: 64px; height: 64px;">
             </a>
             <div class="media-body">
-                <h4 class="media-heading"><span class="news-item">{{html HeadlineStr}}</span><!--<a href="#" keywords="aapl" class="news-item">{{html Headline}}</a>--></h4>
+                <h4 class="media-heading">${title.text}</h4>
 
             </div>
         </div>
-
+        {{/each}}
 
     </script>
     <script id="cInfoTemplate1" type="text/x-jquery-tmpl">
@@ -513,10 +518,10 @@
           $.post('/1/company/search', { data:JSON.stringify(dataObj)}, function (response) {
 
               //$('.popover-content').empty();
-              console.log(response.data);
+              //console.log(response.data);
               $('#cInfoDivId').empty();
               $("#cInfoTemplate2").tmpl(response.data).appendTo("div#cInfoDivId");
-              loadNewsFor(dataObj.symbol);
+
               //return response;
 
           });
@@ -525,7 +530,6 @@
       function refreshResults(currSlide){
           var dataObj={};
           dataObj['q']=currSlide.cid;
-          //dataObj['symbol']=currSlide.symbol;
           dataObj['m']='true';
           callSearchUsing(dataObj);
           $('#commDivId').empty();
@@ -533,39 +537,8 @@
           $('#commDivId').removeClass('hide-me');
       }
 
-      function loadNewsFor(symbol){
-          //http://betawebapi.dowjones.com/fintech/articles/api/v1/source/424/?count=20
-          var newsURLToCall = '/1/company/news/'+(symbol?symbol:'all');
-          //console.log('newsURL ->'+newsURLToCall);
-          $.get(newsURLToCall,function (response) {
-              //
-              $('#news-ft-div').empty();
-              $("#cnewsTemplate1").tmpl(response.Headlines).appendTo("div#news-ft-div");
-              $('a.news-item').hover(function(e) {
-                  //hideAllPopovers();
-                  e.preventDefault();
-                  //console.log(' hover -->');
-                  var e1=$(this);
-                  var newsURLToCall1 = '/1/company/news/all';
-                  $.get(newsURLToCall1,function(d) {
-                      e1.popover({html : true,
-                          live: true,
-                          placement:'bottom',title:'Apple Inc.',content: '<h1>Title H1</h1>'}).popover('show');
-                  });
-              },function(e) {
-                  var e1=$(this);
-                  e1.popover('hide');
-              });
-
-          });
-
-      }
-
 
       $(document).ready(function () {
-
-
-          loadNewsFor();
           //
           /*$.get('http://api.pearson.com/ftpress/book.json?name=apple&apikey=V4oQMVLlkCF9UuwCQaNpgnJPDs9zP0TG',function (response) {
               //
@@ -592,7 +565,7 @@
                console.log(data);
                });*/
               $.post('/1/sb/getPPT', { data:JSON.stringify(dataObj)}, function (response) {
-                  console.log(response.data.currSlide.cid);
+                  //console.log(response.data.currSlide.cid);
                   refreshResults(response.data.currSlide);
                   $('#myModal').modal('show');
 
@@ -630,12 +603,10 @@
           $(document).on( 'click', '.search-res', function(){
               console.log('search called..!');
               var cid = $(this).attr('cid');
-              var symbol = $(this).attr('symbol');
               console.log(cid);
               var dataObj={};
               dataObj['q']=cid;
               dataObj['m']='true';
-              dataObj['symbol']=symbol;
 
               callSearchUsing(dataObj);
           } );
@@ -697,8 +668,6 @@
           console.log('before event is called');
           console.log(this);
       })
-
-
 
 
       $('#searchDivId').popover({
@@ -803,17 +772,52 @@
           })
       })
 
+
+
   </script>
+
     <script type="text/javascript">
 
-        $(function(){
+        $(function() {
 
-
-
-            /*var sym = $.url().param('symbol') || 'AAPL';
-            var dur = $.url().param('duration') || 3650;
-
-            new Markit.InteractiveChartApi(sym, dur);*/
+            $("#symbolsearch")
+                    .focus()
+                    .autocomplete({
+                        source: function(request,response) {
+                            $.ajax({
+                                beforeSend: function(){
+                                    //$("span.help-inline").show();
+                                    //$("span.label-info").empty().hide();
+                                },
+                                url: "http://dev.markitondemand.com/api/v2/Lookup/jsonp",
+                                dataType: "jsonp",
+                                data: {
+                                    input: request.term
+                                },
+                                success: function(data) {
+                                    response( $.map(data, function(item) {
+                                        return {
+                                            label: item.Name + " (" +item.Exchange+ ")",
+                                            value: item.Symbol
+                                        }
+                                    }));
+                                    //$("span.help-inline").hide();
+                                }
+                            });
+                        },
+                        minLength: 0,
+                        select: function( event, ui ) {
+                            console.log(ui.item);
+                            //$("span.label-info").html("You selected " + ui.item.label).fadeIn("fast");
+                        },
+                        open: function() {
+                            //$(this).removeClass("ui-corner-all").addClass("ui-corner-top");
+                        },
+                        close: function() {
+                            //$(this).removeClass("ui-corner-top").addClass("ui-corner-all");
+                        }
+                    })
+            ;
         });
 
     </script>

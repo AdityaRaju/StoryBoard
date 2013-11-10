@@ -2,6 +2,7 @@ package com.test1;
 
 import com.om.context.ApplicationContext;
 import com.om.dao.StockMetadataDAO;
+import com.om.dao.StockPriceDAO;
 
 /**
  * Created with IntelliJ IDEA.
@@ -13,8 +14,13 @@ import com.om.dao.StockMetadataDAO;
 public class StockFindTest {
 
     public static void main(String[] args) {
-        StockMetadataDAO stockMetadataDAO = (StockMetadataDAO) ApplicationContext.getInstance().getBean("stockMetadataDAO");
+        ApplicationContext instance = ApplicationContext.getInstance();
+        StockMetadataDAO stockMetadataDAO = (StockMetadataDAO) instance.getBean("stockMetadataDAO");
 
-        System.out.println("stockMetadataDAO.searchCompaniesBy(\"ibm\") = " + stockMetadataDAO.searchCompaniesByAny("inter"));
+        StockPriceDAO stockPriceDAO = (StockPriceDAO)instance.getBean("stockPriceDAO");
+        //stockPriceDAO.getCompanyHistoricalData("BBG000GZQ728");
+        stockPriceDAO.getCompanyMarketCap("BBG000GZQ728");
+        //System.out.println("stockMetadataDAO.searchCompaniesBy(\"ibm\") = " + stockMetadataDAO.searchCompaniesByAny("inter"));
+
     }
 }

@@ -2,14 +2,18 @@ package com.om.service;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mail.TestMail;
 import com.om.dao.PortfolioDAO;
+import com.om.dao.SlideDAO;
 import com.om.dao.StockMetadataDAO;
 import com.om.util.DateTimeUtil;
+import org.apache.commons.lang.StringUtils;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
@@ -32,27 +36,162 @@ public class StoryboardService {
     @Autowired
     StockMetadataDAO stockMetadataDAO;
 
+    @Autowired
+    SlideDAO slideDAO;
+
+
+
+    static String SL_LIST= "SLIDE_LIST_OBJ";
+
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/addSlide")
     @Consumes("application/x-www-form-urlencoded")
-    public String addSlide(@FormParam("data")String data){
+    public String addSlide(@FormParam("data")String data,@Context HttpServletRequest servletRequest)throws Exception{
         Gson gson = new Gson();
         Type type =new TypeToken<Map<String, String>>(){}.getType();
         Map<String, String> dataObj = (Map<String, String>)gson.fromJson(data,type);
-
+        HttpSession session = servletRequest.getSession();
+        List<Map<String,String>> slideList = null;
+        if(session.getAttribute(SL_LIST) == null){
+            slideList = new ArrayList<Map<String, String>>();
+        }else{
+            slideList = (List<Map<String,String>>)session.getAttribute(SL_LIST);
+        }
+        dataObj.put("slideId",slideDAO.getNextSlideId());
+        slideList.add(dataObj);
+        session.setAttribute(SL_LIST, slideList);
         HashMap<String,Object> outObj = new HashMap<String, Object>();
-        /* List<Map<String,Object>> dataObj1 = new ArrayList<Map<String, Object>>();
-        for(int i=0;i<10;i++){
-            HashMap<String,Object> dataObj2 = new HashMap<String, Object>();
-            dataObj2.put("ticker",UUID.randomUUID().toString());
-            dataObj2.put("sector","Technology");
-            dataObj1.add(dataObj2);
-        }*/
+        return gson.toJson(outObj);
+    }
 
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/clean")
+    @Consumes("application/x-www-form-urlencoded")
+    public String cleanPresentation(@FormParam("data")String data,@Context HttpServletRequest servletRequest)throws Exception{
+        Gson gson = new Gson();
+        HashMap<String,Object> outObj = new HashMap<String, Object>();
+        HttpSession session = servletRequest.getSession();
+        session.removeAttribute(SL_LIST);
+        return gson.toJson(outObj);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/save")
+    @Consumes("application/x-www-form-urlencoded")
+    public String savePresentation(@FormParam("data")String data,@Context HttpServletRequest servletRequest)throws Exception{
+        Gson gson = new Gson();
+        Type type =new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> saveObjData = (Map<String, String>)gson.fromJson(data,type);
+        HttpSession session = servletRequest.getSession();
+        List<Map<String,String>> slideList  = (List<Map<String,String>>)session.getAttribute(SL_LIST);
+        HashMap<String,Object> insertObj = new HashMap<String, Object>();
+
+        String nextPPTId = slideDAO.getNextPPTId();
+        insertObj.put("pptid", nextPPTId);
+        insertObj.put("slides",slideList);
+        insertObj.put("header","Welcome to Presentation on ..... !");
+
+        slideDAO.insertPPT(insertObj);
+
+        new TestMail().test(nextPPTId);
+
+        //slideList.add(dataObj);
+        HashMap<String,Object> outObj = new HashMap<String, Object>();
+        return gson.toJson(outObj);
+    }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/getPPT")
+    @Consumes("application/x-www-form-urlencoded")
+    public String getPresentation(@FormParam("data")String data,@Context HttpServletRequest servletRequest)throws Exception{
+        Gson gson = new Gson();
+        Type type =new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> saveObjData = (Map<String, String>)gson.fromJson(data,type);
+        Map<String, Object> result = slideDAO.getPPT(saveObjData.get("pid"));
+
+        //slideList.add(dataObj);
+        HashMap<String,Object> outObj = new HashMap<String, Object>();
+        List<Map<String, String>> slides = (List<Map<String, String>>) result.get("slides");
+        Map<String, Object> retObj = new HashMap<String, Object>();
+        retObj.put("msg",result.get("header").toString()) ;
+        Map<String, String> currentSlideMap = slides.get(0);
+
+        if(slides.size() > 1){
+            retObj.put("nextSlide",slides.get(1)) ;
+        }
+        currentSlideMap.put("nextSlideId",slides.get(1).get("slideId"));
+        retObj.put("currSlide", currentSlideMap) ;
+        outObj.put("data",retObj);
+        HttpSession session = servletRequest.getSession();
+        //List<Map<String,String>> slideList = (List<Map<String,String>>)session.getAttribute(SL_LIST);
+        session.setAttribute(SL_LIST, slides);
 
         return gson.toJson(outObj);
     }
+
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/prevNext")
+    @Consumes("application/x-www-form-urlencoded")
+    public String prevNext(@FormParam("data")String data,@Context HttpServletRequest servletRequest)throws Exception{
+        Gson gson = new Gson();
+        Type type =new TypeToken<Map<String, String>>(){}.getType();
+        Map<String, String> inputObj = (Map<String, String>)gson.fromJson(data,type);
+        String slideId = inputObj.get("slideId");//servletRequest.getParameter("slideId");
+        HttpSession session = servletRequest.getSession();
+        List<Map<String,String>> slideList = (List<Map<String,String>>)session.getAttribute(SL_LIST);
+        Map<String,String> slide = null;
+        int counter = 0;
+        boolean found = false;
+        for (Map<String, String> map : slideList) {
+             if(StringUtils.equalsIgnoreCase((String)map.get("slideId"),slideId)){
+                 slide = map;
+                  found = true;
+                 break;
+             }
+            if(!found){
+                counter++;
+            }
+        }
+        //Map<String, Object> result = slideDAO.getPPT(servletRequest.getParameter("pid"));
+        Map<String, Object> retObj = new HashMap<String, Object>();
+        //retObj.put("msg",result.get("header").toString()) ;
+        //Map<String, String> currentSlideMap = slides.get(0);
+        if(StringUtils.equalsIgnoreCase(inputObj.get("type"),"prev")){
+            if(slideList.size() > counter){
+                retObj.put("nextSlide",slideList.get(counter+1)) ;
+                slide.put("nextSlideId",slideList.get(counter+1).get("slideId"));
+            }
+
+            if(counter != 0){
+                retObj.put("prevSlide",slideList.get(counter-1)) ;
+                slide.put("prevSlideId",slideList.get(counter-1).get("slideId"));
+            }
+        }else{
+            if(slideList.size() > counter+1){
+                retObj.put("nextSlide",slideList.get(counter+1)) ;
+                slide.put("nextSlideId",slideList.get(counter+1).get("slideId"));
+            }
+
+            if(counter != 0){
+                retObj.put("prevSlide",slideList.get(counter-1)) ;
+                slide.put("prevSlideId",slideList.get(counter-1).get("slideId"));
+            }
+        }
+
+
+        retObj.put("currSlide", slide) ;
+        //outObj.put("data",retObj);
+        //slideList.add(dataObj);
+        HashMap<String,Object> outObj = new HashMap<String, Object>();
+        outObj.put("data",retObj);
+        return gson.toJson(outObj);
+    }
+
 
     @POST
     @Produces(MediaType.APPLICATION_JSON)
